@@ -52,7 +52,6 @@ export const AppBody = React.memo(function AppBody() {
   return (
     <>
       <Title />
-      <SyntaxTable />
       <InputArea onQueryChange={onQueryChange} query={query} />
       <div>{message}</div>
       <TruthTable rows={result} />
