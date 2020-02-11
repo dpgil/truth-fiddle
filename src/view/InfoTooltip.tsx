@@ -1,7 +1,7 @@
 import React from 'react';
 import InfoIcon from '@material-ui/icons/Info';
-import Typography from '@material-ui/core/Typography';
 import { CustomTooltip } from './CustomTooltip';
+import { SyntaxTable } from './SyntaxTable';
 
 const iconStyle: React.CSSProperties = {
   display: 'inline-block',
@@ -12,11 +12,10 @@ const iconStyle: React.CSSProperties = {
 export const InfoTooltip = React.memo(function InfoTooltip() {
   return (
     <CustomTooltip
+      interactive
       title={
         <React.Fragment>
-          <Typography color="inherit">Tooltip with HTML</Typography>
-          <em>{"And here's"}</em> <b>{'some'}</b> <u>{'amazing content'}</u>.{' '}
-          {"It's very engaging. Right?"}
+          <SyntaxTable />
         </React.Fragment>
       }
     >

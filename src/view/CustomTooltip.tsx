@@ -8,5 +8,6 @@ export const CustomTooltip = withStyles(_ => ({
     maxWidth: 220,
     fontSize: 12,
     border: '1px solid #dadde9',
+    textAlign: 'center',
   },
 }))(Tooltip);
