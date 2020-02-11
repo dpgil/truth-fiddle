@@ -1,8 +1,8 @@
 import React from 'react';
 import { IconButton } from '@material-ui/core';
 import ShareIcon from '@material-ui/icons/Share';
-import Tooltip from '@material-ui/core/Tooltip';
 import { generateUrlFromQuery } from '../util/generateUrlFromQuery';
+import { CustomTooltip } from './CustomTooltip';
 
 const copyButtonStyle: React.CSSProperties = {
   color: 'white',
@@ -28,7 +28,7 @@ export const CopyButton = React.memo(function CopyButton(
   };
 
   return (
-    <Tooltip title={'Copy link'} enterDelay={200}>
+    <CustomTooltip title={'Copy link'} enterDelay={200}>
       <IconButton
         aria-label="copy link"
         style={copyButtonStyle}
@@ -36,6 +36,6 @@ export const CopyButton = React.memo(function CopyButton(
       >
         <ShareIcon color={'inherit'} />
       </IconButton>
-    </Tooltip>
+    </CustomTooltip>
   );
 });
