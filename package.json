@@ -34,7 +34,7 @@
     "start": "pm2 start process.json",
     "stop": "pm2 stop process.json",
     "restart": "pm2 restart all",
-    "prettier": "pretty-quick --staged --no-restage --bail --pattern \"**/*.(js|jsx|ts|tsx)\""
+    "prettier": "pretty-quick --staged --no-restage --bail --pattern \"**/*.*(js|jsx|ts|tsx)\""
   },
   "eslintConfig": {
     "extends": "react-app"
