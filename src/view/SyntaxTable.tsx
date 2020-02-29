@@ -11,7 +11,11 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
           </tr>
           <tr>
             <td>
-              <a href="https://en.wikipedia.org/wiki/Negation" target="_blank">
+              <a
+                href="https://en.wikipedia.org/wiki/Negation"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Negation
               </a>
             </td>
@@ -22,6 +26,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Logical_conjunction"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Conjuction
               </a>
@@ -33,6 +38,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Logical_disjunction"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Inclusive Disjunction
               </a>
@@ -44,6 +50,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Exclusive_or"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Exclusive Disjunction
               </a>
@@ -55,6 +62,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Material_conditional"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Implication
               </a>
@@ -66,6 +74,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Converse_implication"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Converse Implication
               </a>
@@ -77,6 +86,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/If_and_only_if"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Biconditional
               </a>
@@ -88,6 +98,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Logical_NOR"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Joint Denial
               </a>
@@ -99,6 +110,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Logical_equality"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Equality
               </a>
@@ -110,6 +122,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Sheffer_stroke"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Alternative Denial
               </a>
@@ -121,6 +134,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Material_nonimplication"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Material Nonimplication
               </a>
@@ -132,6 +146,7 @@ export const SyntaxTable = React.memo(function SyntaxTable() {
               <a
                 href="https://en.wikipedia.org/wiki/Converse_nonimplication"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Converse Nonimplication
               </a>
