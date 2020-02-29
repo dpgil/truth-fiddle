@@ -1,7 +1,6 @@
 import React from 'react';
 import QueryString from 'query-string';
 import { Title } from './Title';
-import { SyntaxTable } from './SyntaxTable';
 import { InputArea } from './InputArea';
 import { TruthTable } from './truthTable';
 import { evaluate, parse, ParseResult, QueryPermutation } from '../model';
