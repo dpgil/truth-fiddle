@@ -4,8 +4,6 @@ import { Title } from './Title';
 import { InputArea } from './InputArea';
 import { TruthTable } from './truthTable';
 import { evaluate, parse, ParseResult, QueryPermutation } from '../model';
-import CodeMirror from 'react-codemirror';
-require('codemirror/lib/codemirror.css');
 
 // Expression the user sees when initially loading the application.
 const defaultExpression = 'p and q';
@@ -17,10 +15,6 @@ const getInitialQuery = (): string => {
     ? params.query.q.toString()
     : defaultExpression;
   return initialQuery;
-};
-
-const options = {
-  lineNumbers: true,
 };
 
 /**
@@ -60,7 +54,6 @@ export const AppBody = React.memo(function AppBody() {
       <Title />
       <InputArea onQueryChange={onQueryChange} query={query} />
       <div>{message}</div>
-      <CodeMirror value={query} onChange={onQueryChange} options={options} />
       <TruthTable rows={result} />
     </>
   );

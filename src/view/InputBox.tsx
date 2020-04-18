@@ -1,14 +1,6 @@
 import React from 'react';
-
-const inputBoxStyle: React.CSSProperties = {
-  borderRadius: 24,
-  paddingLeft: 8,
-  paddingRight: 8,
-  fontSize: 24,
-  textAlign: 'center',
-  verticalAlign: 'middle',
-  outline: 'none',
-};
+import CodeMirror from 'react-codemirror';
+require('codemirror/lib/codemirror.css');
 
 interface InputBoxProps {
   query: string;
@@ -19,11 +11,16 @@ interface InputBoxProps {
  * InputBox is where the user can enter their boolean expression.
  */
 export const InputBox = React.memo(function InputBox(props: InputBoxProps) {
-  const { query } = props;
-
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    props.onQueryChange(event.target.value);
+  const codeMirrorOptions = {
+    lineNumbers: false,
+    value: 'p and q',
   };
 
-  return <input style={inputBoxStyle} onChange={onChange} value={query} />;
+  return (
+    <CodeMirror
+      value={props.query}
+      onChange={props.onQueryChange}
+      options={codeMirrorOptions}
+    />
+  );
 });
