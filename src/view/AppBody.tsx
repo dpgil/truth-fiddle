@@ -3,9 +3,9 @@ import QueryString from 'query-string';
 import { Title } from './Title';
 import { InputArea } from './InputArea';
 import { TruthTable } from './truthTable';
-import { QueryParameters, QueryPermutation } from '../model';
+import computeTruthTable from '../util/computeTruthTable';
+import { QueryPermutation } from '../model';
 import BooleanExpressions from 'boolean-expressions';
-import generatePowerSet from '../util/generatePowerSet';
 
 // Expression the user sees when initially loading the application.
 const defaultExpression = 'p and q';
@@ -18,29 +18,6 @@ const getInitialQuery = (): string => {
     : defaultExpression;
   return initialQuery;
 };
-
-function computeTruthTable(
-  b: BooleanExpressions,
-  variableNames: string[],
-  permutations: string[][]
-): QueryPermutation[] {
-  const truthTable: QueryPermutation[] = [];
-
-  permutations.forEach(p => {
-    const queryParameters: QueryParameters = new Map<string, boolean>();
-    variableNames.forEach(v => {
-      queryParameters.set(v, p.indexOf(v) >= 0);
-    });
-    const value = b.evaluate(p);
-    const queryPermutation: QueryPermutation = {
-      queryParameters,
-      value,
-    };
-    truthTable.push(queryPermutation);
-  });
-
-  return truthTable;
-}
 
 /**
  * AppBody contains everything in the application, just used
@@ -64,15 +41,8 @@ export const AppBody = React.memo(function AppBody() {
       setMessage('');
 
       // Parse the query and extract its variables.
-      const booleanExpressions = new BooleanExpressions(query);
-      const variableNames = booleanExpressions.getVariableNames();
-      const permutations: string[][] = [];
-      generatePowerSet(variableNames, permutations);
-      const truthTable: QueryPermutation[] = computeTruthTable(
-        booleanExpressions,
-        variableNames,
-        permutations
-      );
+      const b = new BooleanExpressions(query);
+      const truthTable = computeTruthTable(b);
       setResult(truthTable);
     } catch (e) {
       // TODO: Make error message more readable to the user.
