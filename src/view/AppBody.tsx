@@ -4,6 +4,8 @@ import { Title } from './Title';
 import { InputArea } from './InputArea';
 import { TruthTable } from './truthTable';
 import { evaluate, parse, ParseResult, QueryPermutation } from '../model';
+import CodeMirror from 'react-codemirror';
+require('codemirror/lib/codemirror.css');
 
 // Expression the user sees when initially loading the application.
 const defaultExpression = 'p and q';
@@ -17,6 +19,14 @@ const getInitialQuery = (): string => {
   return initialQuery;
 };
 
+const getInitialCode = (): string => {
+  return '// Code';
+};
+
+const options = {
+  lineNumbers: true,
+};
+
 /**
  * AppBody contains everything in the application, just used
  * as a layer of abstraction from App.
@@ -25,13 +35,19 @@ export const AppBody = React.memo(function AppBody() {
   const [query, setQuery] = React.useState<string>('');
   const [result, setResult] = React.useState<QueryPermutation[]>([]);
   const [message, setMessage] = React.useState<string>('');
+  const [code, setCode] = React.useState<string>('');
 
   const onQueryChange = (newQuery: string) => {
     setQuery(newQuery);
   };
 
+  const onCodeChange = (newCode: string) => {
+    setCode(newCode);
+  };
+
   React.useEffect(() => {
     setQuery(getInitialQuery());
+    setCode(getInitialCode());
   }, []);
 
   React.useEffect(() => {
@@ -54,6 +70,7 @@ export const AppBody = React.memo(function AppBody() {
       <Title />
       <InputArea onQueryChange={onQueryChange} query={query} />
       <div>{message}</div>
+      <CodeMirror value={query} onChange={onQueryChange} options={options} />
       <TruthTable rows={result} />
     </>
   );
