@@ -3,10 +3,9 @@ import QueryString from 'query-string';
 import { Title } from './Title';
 import { InputArea } from './InputArea';
 import { TruthTable } from './truthTable';
-import { evaluate, parse, ParseResult, QueryPermutation } from '../model';
+import { QueryParameters, QueryPermutation } from '../model';
 import BooleanExpressions from 'boolean-expressions';
 import generatePowerSet from '../util/generatePowerSet';
-import { QueryParameters } from '../model/evaluator/QueryParameters';
 
 // Expression the user sees when initially loading the application.
 const defaultExpression = 'p and q';
