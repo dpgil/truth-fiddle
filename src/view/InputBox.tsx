@@ -1,6 +1,7 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 require('codemirror/lib/codemirror.css');
+require('codemirror/mode/python/python');
 
 interface InputBoxProps {
   query: string;
@@ -12,8 +13,8 @@ interface InputBoxProps {
  */
 export const InputBox = React.memo(function InputBox(props: InputBoxProps) {
   const codeMirrorOptions = {
-    lineNumbers: false,
     value: 'p and q',
+    mode: { name: 'python' },
   };
 
   return (
