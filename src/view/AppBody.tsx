@@ -19,10 +19,6 @@ const getInitialQuery = (): string => {
   return initialQuery;
 };
 
-const getInitialCode = (): string => {
-  return '// Code';
-};
-
 const options = {
   lineNumbers: true,
 };
@@ -35,19 +31,13 @@ export const AppBody = React.memo(function AppBody() {
   const [query, setQuery] = React.useState<string>('');
   const [result, setResult] = React.useState<QueryPermutation[]>([]);
   const [message, setMessage] = React.useState<string>('');
-  const [code, setCode] = React.useState<string>('');
 
   const onQueryChange = (newQuery: string) => {
     setQuery(newQuery);
   };
 
-  const onCodeChange = (newCode: string) => {
-    setCode(newCode);
-  };
-
   React.useEffect(() => {
     setQuery(getInitialQuery());
-    setCode(getInitialCode());
   }, []);
 
   React.useEffect(() => {
