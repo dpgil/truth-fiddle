@@ -40,7 +40,6 @@ export const AppBody = React.memo(function AppBody() {
     try {
       setMessage('');
 
-      // Parse the query and extract its variables.
       const b = new BooleanExpressions(query);
       const truthTable = computeTruthTable(b);
       setResult(truthTable);
