@@ -3,7 +3,9 @@ import QueryString from 'query-string';
 import { Title } from './Title';
 import { InputArea } from './InputArea';
 import { TruthTable } from './truthTable';
-import { evaluate, parse, ParseResult, QueryPermutation } from '../model';
+import computeTruthTable from '../util/computeTruthTable';
+import { QueryPermutation } from '../model';
+import BooleanExpressions from 'boolean-expressions';
 
 // Expression the user sees when initially loading the application.
 const defaultExpression = 'p and q';
@@ -38,10 +40,9 @@ export const AppBody = React.memo(function AppBody() {
     try {
       setMessage('');
 
-      // Parse the query and extract its variables.
-      const parseResult: ParseResult = parse(query);
-      const evaluateResult: QueryPermutation[] = evaluate(parseResult);
-      setResult(evaluateResult);
+      const b = new BooleanExpressions(query);
+      const truthTable = computeTruthTable(b);
+      setResult(truthTable);
     } catch (e) {
       // TODO: Make error message more readable to the user.
       setMessage('Invalid Query');

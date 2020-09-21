@@ -1,2 +1,2 @@
-export * from './evaluate';
+export * from './QueryParameters';
 export * from './QueryPermutation';
