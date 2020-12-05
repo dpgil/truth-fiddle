@@ -25,3 +25,17 @@ npm run test
 ```
 npm run prettier
 ```
+
+## Run with Docker
+1. Pull the latest container (unless you want to build it yourself)
+```
+docker-compose pull
+```
+2. Start the container
+```
+docker-compose up
+```
+3. Stop the container
+```
+docker-compose down
+```

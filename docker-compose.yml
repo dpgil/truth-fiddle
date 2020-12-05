@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+
+    react:
+        image: avadavat/truth-fiddle:latest
+        build:
+            context: .
+            dockerfile: Dockerfile
+        expose:
+            - "8080"
+        ports:
+            - "8080:8080"
+        restart: always
